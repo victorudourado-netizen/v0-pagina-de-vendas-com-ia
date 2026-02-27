@@ -3,7 +3,7 @@
 import { useState, useCallback } from "react"
 import { VideoPlayer } from "@/components/vsl/video-player"
 import { LiveCounter } from "@/components/vsl/live-counter"
-import { WaitingMessage } from "@/components/vsl/waiting-message"
+
 import { CTASection } from "@/components/vsl/cta-section"
 import { Testimonials } from "@/components/vsl/testimonials"
 import { FAQSection } from "@/components/vsl/faq-section"
@@ -58,9 +58,8 @@ export default function VSLPage() {
         <VideoPlayer onTimeUpdate={handleTimeUpdate} />
       </div>
 
-      {/* CTA or Waiting Message */}
+      {/* CTA */}
       <div className="py-8 px-4">
-        <WaitingMessage visible={!showCTA} />
         <CTASection visible={showCTA} checkoutUrl={CHECKOUT_URL} />
       </div>
 

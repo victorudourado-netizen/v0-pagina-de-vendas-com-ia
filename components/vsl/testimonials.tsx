@@ -225,7 +225,7 @@ export function Testimonials() {
   return (
     <div className="w-full max-w-[800px] mx-auto px-4">
       <h2 className="text-white font-serif text-xl md:text-2xl font-bold mb-6 text-center uppercase tracking-tight">
-        Resultados Reais de Alunos
+        Resultados de Pessoas Comuns
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
