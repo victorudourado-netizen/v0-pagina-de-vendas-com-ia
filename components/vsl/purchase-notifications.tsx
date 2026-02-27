@@ -1,0 +1,91 @@
+"use client"
+
+import { useEffect, useState } from "react"
+import { CheckCircle } from "lucide-react"
+
+const buyers = [
+  { name: "Rodrigo S.", city: "Sao Paulo, SP" },
+  { name: "Amanda L.", city: "Rio de Janeiro, RJ" },
+  { name: "Pedro H.", city: "Belo Horizonte, MG" },
+  { name: "Camila R.", city: "Curitiba, PR" },
+  { name: "Lucas M.", city: "Salvador, BA" },
+  { name: "Fernanda A.", city: "Fortaleza, CE" },
+  { name: "Thiago B.", city: "Brasilia, DF" },
+  { name: "Bruna P.", city: "Manaus, AM" },
+  { name: "Gabriel N.", city: "Goiania, GO" },
+  { name: "Isabela F.", city: "Recife, PE" },
+  { name: "Matheus D.", city: "Porto Alegre, RS" },
+  { name: "Larissa V.", city: "Campinas, SP" },
+  { name: "Rafael C.", city: "Florianopolis, SC" },
+  { name: "Natalia O.", city: "Belem, PA" },
+  { name: "Diego T.", city: "Vitoria, ES" },
+  { name: "Aline G.", city: "Natal, RN" },
+  { name: "Vinicius J.", city: "Campo Grande, MS" },
+  { name: "Mariana K.", city: "Joao Pessoa, PB" },
+  { name: "Felipe E.", city: "Maceio, AL" },
+  { name: "Priscila W.", city: "Sao Luis, MA" },
+]
+
+interface PurchaseNotificationsProps {
+  active: boolean
+}
+
+export function PurchaseNotifications({ active }: PurchaseNotificationsProps) {
+  const [currentNotification, setCurrentNotification] = useState<typeof buyers[0] | null>(null)
+  const [visible, setVisible] = useState(false)
+  const [index, setIndex] = useState(0)
+
+  useEffect(() => {
+    if (!active) return
+
+    const showNotification = () => {
+      const buyer = buyers[index % buyers.length]
+      setCurrentNotification(buyer)
+      setVisible(true)
+
+      // Hide after 4 seconds
+      setTimeout(() => {
+        setVisible(false)
+      }, 4000)
+
+      setIndex((prev) => prev + 1)
+    }
+
+    // Show first one immediately
+    showNotification()
+
+    // Then every 17 seconds
+    const interval = setInterval(showNotification, 17000)
+
+    return () => clearInterval(interval)
+  }, [active, index])
+
+  if (!active || !currentNotification) return null
+
+  return (
+    <div
+      className={`fixed bottom-4 left-4 z-50 transition-all duration-500 ${
+        visible
+          ? "translate-x-0 opacity-100"
+          : "-translate-x-full opacity-0"
+      }`}
+    >
+      <div className="bg-[#111111] border border-[#222222] rounded-lg p-3 flex items-center gap-3 shadow-2xl shadow-black/50 max-w-[320px]">
+        <div className="w-10 h-10 rounded-full bg-[#0d7c3d]/20 flex items-center justify-center shrink-0">
+          <CheckCircle className="w-5 h-5 text-[#22c55e]" />
+        </div>
+        <div className="min-w-0">
+          <p className="text-white text-sm font-semibold truncate">
+            {currentNotification.name}
+          </p>
+          <p className="text-[#888888] text-xs truncate">
+            {currentNotification.city}
+          </p>
+          <p className="text-[#22c55e] text-xs font-medium mt-0.5">
+            Acabou de garantir o metodo
+          </p>
+        </div>
+      </div>
+    </div>
+  )
+}
