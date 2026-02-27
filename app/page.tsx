@@ -101,16 +101,18 @@ export default function VSLPage() {
         </div>
       )}
 
-      {/* Footer */}
+      {/* Footer - disclaimer only shows after 5 min */}
       <footer className="py-8 px-4 border-t border-[#111111]">
         <div className="max-w-[800px] mx-auto text-center">
-          <p className="text-[#444444] text-xs leading-relaxed font-sans">
-            Este produto e vendido atraves da Kiwify. A plataforma de pagamento oferece
-            garantia de 7 dias para reembolso. Ao adquirir, voce concorda com os termos de uso
-            e politica de privacidade da plataforma. Este site nao e afiliado ao Facebook,
-            Google, YouTube ou qualquer outra plataforma mencionada.
-          </p>
-          <p className="text-[#333333] text-xs mt-3 font-sans">
+          {showCTA && (
+            <p className="text-[#444444] text-xs leading-relaxed font-sans mb-3">
+              Este produto e vendido atraves da Kiwify. A plataforma de pagamento oferece
+              garantia de 7 dias para reembolso. Ao adquirir, voce concorda com os termos de uso
+              e politica de privacidade da plataforma. Este site nao e afiliado ao Facebook,
+              Google, YouTube ou qualquer outra plataforma mencionada.
+            </p>
+          )}
+          <p className="text-[#333333] text-xs font-sans">
             Metodo Cortes Abençoados - Todos os direitos reservados
           </p>
         </div>
