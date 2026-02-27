@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useCallback } from "react"
+import { useState, useEffect } from "react"
 import { VideoPlayer } from "@/components/vsl/video-player"
 import { LiveCounter } from "@/components/vsl/live-counter"
 import { CTASection } from "@/components/vsl/cta-section"
@@ -9,19 +9,20 @@ import { FAQSection } from "@/components/vsl/faq-section"
 import { PurchaseNotifications } from "@/components/vsl/purchase-notifications"
 
 const CHECKOUT_URL = "https://pay.kiwify.com.br/YvHHAGd"
-const CTA_REVEAL_SECONDS = 300 // 5 minutes
-const NOTIFICATION_REVEAL_SECONDS = 360 // 6 minutes
+const PAGE_TIMER_CTA = 240_000 // 4 minutes in ms
+const PAGE_TIMER_NOTIFICATIONS = 300_000 // 5 minutes in ms
 
 export default function VSLPage() {
   const [showCTA, setShowCTA] = useState(false)
   const [showNotifications, setShowNotifications] = useState(false)
 
-  const handleTimeUpdate = useCallback((seconds: number) => {
-    if (seconds >= CTA_REVEAL_SECONDS) {
-      setShowCTA(true)
-    }
-    if (seconds >= NOTIFICATION_REVEAL_SECONDS) {
-      setShowNotifications(true)
+  // Page-based timer: reveals elements after time on page, regardless of video
+  useEffect(() => {
+    const ctaTimer = setTimeout(() => setShowCTA(true), PAGE_TIMER_CTA)
+    const notifTimer = setTimeout(() => setShowNotifications(true), PAGE_TIMER_NOTIFICATIONS)
+    return () => {
+      clearTimeout(ctaTimer)
+      clearTimeout(notifTimer)
     }
   }, [])
 
@@ -54,7 +55,7 @@ export default function VSLPage() {
 
       {/* Video Player */}
       <div className="px-2 sm:px-4">
-        <VideoPlayer onTimeUpdate={handleTimeUpdate} />
+        <VideoPlayer />
       </div>
 
       {/* CTA */}
