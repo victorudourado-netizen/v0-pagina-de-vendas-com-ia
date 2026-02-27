@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import { CheckCircle } from "lucide-react"
 
 const buyers = [
@@ -33,32 +33,34 @@ interface PurchaseNotificationsProps {
 export function PurchaseNotifications({ active }: PurchaseNotificationsProps) {
   const [currentNotification, setCurrentNotification] = useState<typeof buyers[0] | null>(null)
   const [visible, setVisible] = useState(false)
-  const [index, setIndex] = useState(0)
+  const indexRef = useRef(0)
 
   useEffect(() => {
     if (!active) return
 
     const showNotification = () => {
-      const buyer = buyers[index % buyers.length]
+      const buyer = buyers[indexRef.current % buyers.length]
       setCurrentNotification(buyer)
       setVisible(true)
 
-      // Hide after 4 seconds
       setTimeout(() => {
         setVisible(false)
       }, 4000)
 
-      setIndex((prev) => prev + 1)
+      indexRef.current += 1
     }
 
-    // Show first one immediately
-    showNotification()
+    // Show first one after a small delay
+    const firstTimeout = setTimeout(showNotification, 1500)
 
     // Then every 17 seconds
     const interval = setInterval(showNotification, 17000)
 
-    return () => clearInterval(interval)
-  }, [active, index])
+    return () => {
+      clearTimeout(firstTimeout)
+      clearInterval(interval)
+    }
+  }, [active])
 
   if (!active || !currentNotification) return null
 
@@ -70,7 +72,7 @@ export function PurchaseNotifications({ active }: PurchaseNotificationsProps) {
           : "-translate-x-full opacity-0"
       }`}
     >
-      <div className="bg-[#111111] border border-[#222222] rounded-lg p-3 flex items-center gap-3 shadow-2xl shadow-black/50 max-w-[320px]">
+      <div className="bg-[#111111] border border-[#222222] rounded-lg p-3 flex items-center gap-3 shadow-2xl shadow-black/50 max-w-[340px]">
         <div className="w-10 h-10 rounded-full bg-[#0d7c3d]/20 flex items-center justify-center shrink-0">
           <CheckCircle className="w-5 h-5 text-[#22c55e]" />
         </div>
@@ -82,7 +84,7 @@ export function PurchaseNotifications({ active }: PurchaseNotificationsProps) {
             {currentNotification.city}
           </p>
           <p className="text-[#22c55e] text-xs font-medium mt-0.5">
-            Acabou de garantir o metodo
+            Acabou de obter as gravacoes
           </p>
         </div>
       </div>

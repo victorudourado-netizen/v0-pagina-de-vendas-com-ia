@@ -1,9 +1,10 @@
 import type { Metadata, Viewport } from 'next'
-import { Inter } from 'next/font/google'
+import { Inter, Oswald } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import './globals.css'
 
 const _inter = Inter({ subsets: ["latin"] });
+const _oswald = Oswald({ subsets: ["latin"], weight: ["700"] });
 
 export const viewport: Viewport = {
   themeColor: '#000000',

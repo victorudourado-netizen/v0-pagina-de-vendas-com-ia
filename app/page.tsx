@@ -18,40 +18,44 @@ export default function VSLPage() {
   const [showNotifications, setShowNotifications] = useState(false)
 
   const handleTimeUpdate = useCallback((seconds: number) => {
-    if (seconds >= CTA_REVEAL_SECONDS && !showCTA) {
+    if (seconds >= CTA_REVEAL_SECONDS) {
       setShowCTA(true)
     }
-    if (seconds >= NOTIFICATION_REVEAL_SECONDS && !showNotifications) {
+    if (seconds >= NOTIFICATION_REVEAL_SECONDS) {
       setShowNotifications(true)
     }
-  }, [showCTA, showNotifications])
+  }, [])
 
   return (
-    <main className="min-h-screen bg-black">
+    <main className="min-h-screen bg-black selection:bg-[#e02020]/30">
       {/* Purchase notifications */}
       <PurchaseNotifications active={showNotifications} />
 
-      {/* Top spacer */}
-      <div className="pt-6 pb-4 px-4">
+      {/* Top bar */}
+      <div className="pt-6 pb-3 px-4">
         <LiveCounter />
       </div>
 
       {/* Headline */}
       <div className="px-4 pb-6 max-w-[800px] mx-auto text-center">
-        <h1 className="text-white text-xl md:text-2xl font-bold leading-tight text-balance">
-          Motorista de App Revela o Metodo Que Usa Para Ganhar Dinheiro Extra Apenas Cortando e Postando Videos
+        <p className="text-[#e02020] text-xs font-bold uppercase tracking-[0.2em] mb-4 font-sans">
+          Aviso: Este video pode ser removido a qualquer momento
+        </p>
+        <h1 className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] text-balance font-serif uppercase tracking-tight">
+          A Igreja Nao Quer Que Voce Saiba Que Da Pra{" "}
+          <span className="text-[#e02020]">Ganhar Dinheiro</span>{" "}
+          Espalhando a Palavra de Deus Pelo Celular
         </h1>
-        <p className="text-[#999999] text-sm md:text-base mt-3 leading-relaxed max-w-[600px] mx-auto text-pretty">
-          Sem aparecer, sem gravar nada, sem gastar com anuncios. Apenas usando videos que ja existem na internet.
+        <p className="text-[#888888] text-sm md:text-base mt-4 leading-relaxed max-w-[640px] mx-auto text-pretty font-sans">
+          Um motorista de aplicativo descobriu uma brecha que grandes pastores e politicos{" "}
+          <span className="text-[#cccccc] font-medium">preferem que voce nunca descubra.</span>{" "}
+          Assista ate o final antes que removam este conteudo.
         </p>
       </div>
 
       {/* Video Player */}
       <div className="px-4">
-        <VideoPlayer
-          videoId="Sro6nOXiEkE"
-          onTimeUpdate={handleTimeUpdate}
-        />
+        <VideoPlayer onTimeUpdate={handleTimeUpdate} />
       </div>
 
       {/* CTA or Waiting Message */}
@@ -68,18 +72,21 @@ export default function VSLPage() {
       {/* Second CTA (only after reveal) */}
       {showCTA && (
         <div className="py-8 px-4">
-          <div className="w-full max-w-[800px] mx-auto flex flex-col items-center">
+          <div className="w-full max-w-[800px] mx-auto flex flex-col items-center gap-3">
+            <p className="text-[#e02020] font-serif uppercase text-lg md:text-xl font-bold tracking-tight text-center">
+              Nao perca essa oportunidade
+            </p>
             <a
               href={CHECKOUT_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="group relative w-full max-w-[480px] block"
             >
-              <div className="absolute -inset-1 bg-[#22c55e]/20 rounded-xl blur-lg group-hover:bg-[#22c55e]/30 transition-all duration-300" />
+              <div className="absolute -inset-1 bg-[#22c55e]/20 rounded-xl blur-lg group-hover:bg-[#22c55e]/30 transition-all duration-300 animate-pulse" />
               <div className="relative bg-[#22c55e] hover:bg-[#16a34a] text-white font-bold text-lg py-5 px-8 rounded-xl text-center transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#22c55e]/25">
-                <span className="block">QUERO GARANTIR MINHA VAGA</span>
-                <span className="block text-sm font-normal mt-1 text-white/80">
-                  Com garantia de 7 dias ou seu dinheiro de volta
+                <span className="block font-serif uppercase tracking-wide">Quero Garantir Minha Vaga Agora</span>
+                <span className="block text-sm font-normal mt-1 text-white/80 font-sans">
+                  Acesso imediato + Garantia de 7 dias
                 </span>
               </div>
             </a>
@@ -97,12 +104,13 @@ export default function VSLPage() {
       {/* Footer */}
       <footer className="py-8 px-4 border-t border-[#111111]">
         <div className="max-w-[800px] mx-auto text-center">
-          <p className="text-[#444444] text-xs leading-relaxed">
+          <p className="text-[#444444] text-xs leading-relaxed font-sans">
             Este produto e vendido atraves da Kiwify. A plataforma de pagamento oferece
             garantia de 7 dias para reembolso. Ao adquirir, voce concorda com os termos de uso
-            e politica de privacidade da plataforma.
+            e politica de privacidade da plataforma. Este site nao e afiliado ao Facebook,
+            Google, YouTube ou qualquer outra plataforma mencionada.
           </p>
-          <p className="text-[#333333] text-xs mt-3">
+          <p className="text-[#333333] text-xs mt-3 font-sans">
             Metodo Cortes Abençoados - Todos os direitos reservados
           </p>
         </div>
