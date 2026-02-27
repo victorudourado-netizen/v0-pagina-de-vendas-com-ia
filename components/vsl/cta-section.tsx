@@ -63,6 +63,14 @@ export function CTASection({ visible, checkoutUrl }: CTASectionProps) {
           </div>
         </div>
       </div>
+
+      {/* Kiwify Disclaimer */}
+      <p className="text-[#444444] text-[11px] leading-relaxed text-center mt-6 max-w-[600px] mx-auto">
+        Este produto e vendido atraves da Kiwify. A plataforma de pagamento oferece
+        garantia de 7 dias para reembolso. Ao adquirir, voce concorda com os termos de uso
+        e politica de privacidade da plataforma. Este site nao e afiliado ao Facebook,
+        Google, YouTube ou qualquer outra plataforma mencionada.
+      </p>
     </div>
   )
 }

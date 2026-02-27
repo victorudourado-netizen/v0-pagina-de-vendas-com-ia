@@ -15,7 +15,7 @@ export function VideoPlayer({ onTimeUpdate }: VideoPlayerProps) {
   const startTimeRef = useRef<number | null>(null)
   const elapsedBeforePauseRef = useRef(0)
   const animRef = useRef<number | null>(null)
-  const estimatedDuration = 35 * 60 // estimated 35 min video
+  const estimatedDuration = 35 * 60
 
   const trackTime = useCallback(() => {
     if (!startTimeRef.current) return
@@ -32,7 +32,6 @@ export function VideoPlayer({ onTimeUpdate }: VideoPlayerProps) {
     if (!iframe) return
 
     if (!isPlaying && !isPaused) {
-      // First play
       iframe.contentWindow?.postMessage(
         JSON.stringify({ event: "command", func: "playVideo", args: [] }),
         "*"
@@ -41,7 +40,6 @@ export function VideoPlayer({ onTimeUpdate }: VideoPlayerProps) {
       startTimeRef.current = Date.now()
       animRef.current = requestAnimationFrame(trackTime)
     } else if (isPlaying && !isPaused) {
-      // Pause
       iframe.contentWindow?.postMessage(
         JSON.stringify({ event: "command", func: "pauseVideo", args: [] }),
         "*"
@@ -52,7 +50,6 @@ export function VideoPlayer({ onTimeUpdate }: VideoPlayerProps) {
       }
       if (animRef.current) cancelAnimationFrame(animRef.current)
     } else if (isPaused) {
-      // Resume
       iframe.contentWindow?.postMessage(
         JSON.stringify({ event: "command", func: "playVideo", args: [] }),
         "*"
@@ -79,7 +76,7 @@ export function VideoPlayer({ onTimeUpdate }: VideoPlayerProps) {
           ref={iframeRef}
           width="100%"
           height="100%"
-          src="https://www.youtube.com/embed/Sro6nOXiEkE?si=rnOVaG3kfDTj207Z&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&iv_load_policy=3&disablekb=1&playsinline=1&enablejsapi=1"
+          src="https://www.youtube.com/embed/Sro6nOXiEkE?si=rnOVaG3kfDTj207Z&controls=0&modestbranding=1&rel=0&showinfo=0&fs=0&iv_load_policy=3&disablekb=1&playsinline=1&enablejsapi=1&vq=hd1080"
           title="VSL Video"
           frameBorder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -1,245 +1,243 @@
 "use client"
 
 import { useState } from "react"
-import { Heart, MessageCircle, ChevronDown, ChevronUp } from "lucide-react"
+import { ThumbsUp, ChevronDown, ChevronUp } from "lucide-react"
 
 interface Comment {
   name: string
-  handle: string
   avatar: string
   text: string
   time: string
   likes: number
-  replies: number
 }
 
 const comments: Comment[] = [
   {
-    name: "Maria S.",
-    handle: "@maria.souzaa",
-    avatar: "https://i.pravatar.cc/150?img=5",
-    text: "Nunca pensei que conseguiria! Em 5 dias ja fiz minhas 3 primeiras vendas. O dinheiro caiu direto. O dinheiro e abençoado!",
+    name: "Fernanda Alves",
+    avatar: "https://randomuser.me/api/portraits/women/44.jpg",
+    text: "Consegui ganhar R$ 500 em 4 dias! Ja e um dinheiro que ajuda demais aqui em casa. Obrigada por tudo!",
     time: "2h",
     likes: 47,
-    replies: 3,
   },
   {
-    name: "Thiago P.",
-    handle: "@thiago.pmendes",
-    avatar: "https://i.pravatar.cc/150?img=12",
-    text: "Mano, to usando pra video de futebol e ta vindo 1500 views por dia nessa semana. To chocado como funciona pra qualquer nicho",
+    name: "Gabriel Ferreira",
+    avatar: "https://randomuser.me/api/portraits/men/32.jpg",
+    text: "Fiz minha primeira venda em 3 dias! Isso usando so o celular... to muito animado!",
     time: "5h",
     likes: 31,
-    replies: 5,
   },
   {
-    name: "Carla F.",
-    handle: "@carlinhaf_",
-    avatar: "https://i.pravatar.cc/150?img=9",
-    text: "Meu marido achou que era golpe kkkk mas ja fiz R$ 420 em 12 dias. Ele que ta querendo aprender agora",
+    name: "Leticia Souza",
+    avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    text: "Consegui fazer minha primeira venda em 5 dias! To muito feliz, obrigado por compartilhar esse metodo!",
     time: "1d",
     likes: 89,
-    replies: 7,
   },
   {
-    name: "Lucas G.",
-    handle: "@lucasgomes.ofc",
-    avatar: "https://i.pravatar.cc/150?img=33",
-    text: "Primeira vez que meu video passou de 500 visualizacoes no YouTube Shorts!! To no caminho certo, logo logo sai a primeira venda",
+    name: "Marcos Silva",
+    avatar: "https://randomuser.me/api/portraits/men/75.jpg",
+    text: "Nunca imaginei que dava pra ganhar dinheiro so usando o celular. Ja to com varias visualizacoes, rumo a primeira venda!",
     time: "3h",
     likes: 22,
-    replies: 1,
   },
   {
-    name: "Sandra L.",
-    handle: "@sandra.lopes22",
-    avatar: "https://i.pravatar.cc/150?img=26",
-    text: "Amei demais. Comecei usando pra videos de futebol e ta dando MUITO certo. Depois vou aplicar pra videos cristaos tambem, pois quero glorificar a Deus com isso",
+    name: "Vinicius Santos",
+    avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+    text: "To no quinto dia e ja comecei a receber varias mensagens pedindo mais informacoes. To empolgado demais!",
     time: "10min",
     likes: 15,
-    replies: 4,
   },
   {
-    name: "Mario B.",
-    handle: "@mariobernardes",
-    avatar: "https://i.pravatar.cc/150?img=14",
-    text: "To com mas sabe na MUfato laas! 220 reais! Chocada! Tudo pelo celular, facil demais",
+    name: "Patricia Gomes",
+    avatar: "https://randomuser.me/api/portraits/women/65.jpg",
+    text: "15 dias e ja consegui ganhar R$ 1.000! Nem acredito, to ate emocionada!",
     time: "1d",
     likes: 56,
-    replies: 3,
   },
   {
-    name: "Fernanda R.",
-    handle: "@fefe_rocha",
-    avatar: "https://i.pravatar.cc/150?img=25",
-    text: "Gente eu to postando os videos de pregacao e ja tenho 1200 seguidores no insta em 8 dias!! Sem gastar nada. To muito feliz com o metodo",
+    name: "Lucas de Souza",
+    avatar: "https://randomuser.me/api/portraits/men/22.jpg",
+    text: "Resolvi tentar nos videos de pegadinhas e deu super certo! Ja consegui 3 vendas em uma semana!",
     time: "6h",
     likes: 38,
-    replies: 2,
   },
   {
-    name: "Juliana P.",
-    handle: "@juju.pferreira",
-    avatar: "https://i.pravatar.cc/150?img=20",
-    text: "Minha familia nao acreditava em mim, achavam que era besteira. Mas ja fiz duas vendas essa semana e agora minha mae ta me pedindo pra ensinar kkkk motivada demais",
+    name: "Maria Eduarda",
+    avatar: "https://randomuser.me/api/portraits/women/33.jpg",
+    text: "Minha familia desacreditou de mim, mas em 2 semanas ja fiz quatro vendas! E so agradecer mesmo!",
     time: "4h",
     likes: 103,
-    replies: 11,
   },
   {
-    name: "Antonio C.",
-    handle: "@tonhao.cardoso",
-    avatar: "https://i.pravatar.cc/150?img=60",
-    text: "Amei 150 reais! Episodio so do 2a da minha vida! Comecei semana passada e ja vi resultado",
+    name: "Pedro Oliveira",
+    avatar: "https://randomuser.me/api/portraits/men/51.jpg",
+    text: "Comecei a aplicar nos videos de futebol e ja fiz 2 vendas! Ta dando super certo!",
     time: "1d",
     likes: 44,
-    replies: 5,
   },
   {
-    name: "Amanda R.",
-    handle: "@amanda.rib3iro",
-    avatar: "https://i.pravatar.cc/150?img=32",
-    text: "Gaxe usando pra videos de humor e pegadinha dessa vez e ta rendendo muito mais views. O metodo funciona pra qualquer tipo de conteudo mesmo",
+    name: "Ana Paula",
+    avatar: "https://randomuser.me/api/portraits/women/47.jpg",
+    text: "Minha familia nao acreditava, mas ja fiz duas vendas e to super motivada agora. Deus e bom!",
     time: "7h",
     likes: 29,
-    replies: 4,
   },
   {
-    name: "Pedro V.",
-    handle: "@pedroviana_",
-    avatar: "https://i.pravatar.cc/150?img=11",
-    text: "Faco tudo no celular, ate enquanto to no onibus indo pro trabalho. Super facil de aplicar. Minha primeira venda saiu ontem, to surreal!",
+    name: "Andre Barbosa",
+    avatar: "https://randomuser.me/api/portraits/men/36.jpg",
+    text: "Muito bom! Apliquei o metodo nos videos de humor e ja fiz R$ 900 em 10 dias. Valeu demais!",
     time: "3d",
     likes: 67,
-    replies: 6,
   },
   {
-    name: "Rafaela T.",
-    handle: "@rafa.teixeira",
-    avatar: "https://i.pravatar.cc/150?img=44",
-    text: "To usando 180 reais na primeira semana e ja entrou mais gente. O algoritmo ta empurrando meus videos demais",
+    name: "Amanda Lima",
+    avatar: "https://randomuser.me/api/portraits/women/52.jpg",
+    text: "To muito feliz! Recebendo muitas visualizacoes nos meus videos e vejo as vendas chegando! So usando o celular!",
     time: "8h",
     likes: 51,
-    replies: 3,
   },
   {
-    name: "Claiane M.",
-    handle: "@clai_morais",
-    avatar: "https://i.pravatar.cc/150?img=47",
-    text: "Passei a vida fazendo video de pegadinhas kkkk e ta dando certo demais! Ja fiz 3 vendas em 6 dias. Quem diria ne",
+    name: "Joao Santos",
+    avatar: "https://randomuser.me/api/portraits/men/67.jpg",
+    text: "Em 7 dias ja consegui R$ 1.200! Muito feliz e grato por essa oportunidade!",
     time: "2d",
     likes: 74,
-    replies: 8,
   },
   {
-    name: "Roberto N.",
-    handle: "@beto.nasc",
-    avatar: "https://i.pravatar.cc/150?img=53",
-    text: "Sou motorista de caminhao e quando paro no posto de noite ja edito e posto meus cortes. Ja vi 3 mil views em um video. Seguimos firme",
+    name: "Camila Ferreira",
+    avatar: "https://randomuser.me/api/portraits/women/71.jpg",
+    text: "Facil demais de fazer, so com o celular! Ja estou recebendo varias mensagens!",
     time: "12h",
     likes: 33,
-    replies: 2,
   },
   {
-    name: "Luiza B.",
-    handle: "@lu.barros_",
-    avatar: "https://i.pravatar.cc/150?img=45",
-    text: "So com celular, sem investir nada. E inacreditavel! Meu TikTok ja tem 4800 seguidores e comecei tem 2 semanas. Deus e bom demais",
+    name: "Lucas Medeiros",
+    avatar: "https://randomuser.me/api/portraits/men/41.jpg",
+    text: "Postei video de futebol e em 12 dias ja consegui R$ 1.300! Esse metodo mudou minha vida!",
     time: "5h",
     likes: 82,
-    replies: 9,
   },
   {
-    name: "Wellington S.",
-    handle: "@well.santos10",
-    avatar: "https://i.pravatar.cc/150?img=57",
-    text: "Cara eu desconfiava muito de curso online. Mas vi que tinha garantia de 7 dias e pensei: se nao prestar peço reembolso. Resultado: ja to no lucro e nem pensei em pedir kkkk",
+    name: "Janaina Costa",
+    avatar: "https://randomuser.me/api/portraits/women/26.jpg",
+    text: "Obrigada por compartilhar esse metodo! Ja vi resultado no primeiro video. Deus no comando sempre!",
     time: "1d",
     likes: 41,
-    replies: 3,
   },
   {
-    name: "Priscila D.",
-    handle: "@prii.dias",
-    avatar: "https://i.pravatar.cc/150?img=23",
-    text: "To usando pra videos cristao e videos de curiosidades. Minha pagina de curiosidades ja tem mais engajamento que a outra. Vou focar nas duas. Muito grata pelo metodo",
+    name: "Ricardo Lima",
+    avatar: "https://randomuser.me/api/portraits/men/53.jpg",
+    text: "Postei videos de pegadinhas e deu super certo! 15 dias e ja to vendo os resultados!",
     time: "9h",
     likes: 27,
-    replies: 1,
   },
   {
-    name: "Josue A.",
-    handle: "@josue.almeida",
-    avatar: "https://i.pravatar.cc/150?img=59",
-    text: "Tava desempregado a 4 meses e minha esposa tava desacreditada. Ontem fiz minha primeira venda e ela chorou comigo. Deus usa quem quer. Obrigado metodo",
+    name: "Carla Mendes",
+    avatar: "https://randomuser.me/api/portraits/women/58.jpg",
+    text: "Muito obrigada! Ja consegui ganhar R$ 850 em 10 dias, to muito animada!",
     time: "16h",
-    likes: 156,
-    replies: 14,
+    likes: 63,
   },
   {
-    name: "Tatiane O.",
-    handle: "@tati.oliveiira",
-    avatar: "https://i.pravatar.cc/150?img=41",
-    text: "O mais legal e que da pra fazer tudo pelo celular mesmo! Eu achava que precisava de computador. To editando os cortes no intervalo do almoco no trabalho",
+    name: "Daniela Costa",
+    avatar: "https://randomuser.me/api/portraits/women/31.jpg",
+    text: "Ja estou vendo as primeiras visualizacoes. Logo logo sai a primeira venda! To confiante demais",
     time: "2d",
     likes: 35,
-    replies: 2,
   },
   {
-    name: "Carlos E.",
-    handle: "@carlosedu.dev",
-    avatar: "https://i.pravatar.cc/150?img=15",
-    text: "Comecei com videos de motivacao e ja to com 7200 seguidores no instagram. Minha meta e chegar em 10k esse mes pra ativar o link nos stories. Metodo top demais, recomendo",
+    name: "Felipe Andrade",
+    avatar: "https://randomuser.me/api/portraits/men/29.jpg",
+    text: "To aplicando e deu certo com videos de humor! Nem acreditei no quanto ta funcionando!",
     time: "3h",
-    likes: 63,
-    replies: 5,
+    likes: 48,
   },
 ]
 
 export function Testimonials() {
   const [showAll, setShowAll] = useState(false)
+  const [likedComments, setLikedComments] = useState<Set<number>>(new Set())
+  const [likeCounts, setLikeCounts] = useState<number[]>(comments.map(c => c.likes))
   const visible = showAll ? comments : comments.slice(0, 6)
+
+  const handleLike = (index: number) => {
+    const globalIndex = index
+    setLikedComments(prev => {
+      const next = new Set(prev)
+      if (next.has(globalIndex)) {
+        next.delete(globalIndex)
+      } else {
+        next.add(globalIndex)
+      }
+      return next
+    })
+    setLikeCounts(prev => {
+      const next = [...prev]
+      if (likedComments.has(globalIndex)) {
+        next[globalIndex] = comments[globalIndex].likes
+      } else {
+        next[globalIndex] = comments[globalIndex].likes + 1
+      }
+      return next
+    })
+  }
 
   return (
     <div className="w-full max-w-[800px] mx-auto px-4">
-      <h2 className="text-white font-serif text-xl md:text-2xl font-bold mb-6 text-center">
-        Resultados Reais de Alunos:
+      <h2 className="text-white font-serif text-xl md:text-2xl font-bold mb-6 text-center uppercase tracking-tight">
+        Resultados Reais de Alunos
       </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
         {visible.map((c, i) => (
           <div
             key={i}
-            className="bg-[#111111] border border-[#222222] rounded-xl p-4"
+            className="bg-[#f2f3f5] rounded-lg overflow-hidden"
           >
-            <div className="flex items-start gap-3">
-              <img
-                src={c.avatar}
-                alt={`Foto de ${c.name}`}
-                className="w-10 h-10 rounded-full object-cover shrink-0"
-                crossOrigin="anonymous"
-              />
-              <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2">
-                  <span className="text-white font-bold text-sm">{c.name}</span>
-                  <span className="text-[#555555] text-xs">{c.handle}</span>
-                </div>
-                <p className="text-[#cccccc] text-sm leading-relaxed mt-1.5">
-                  {c.text}
-                </p>
-                <div className="flex items-center gap-4 mt-3 text-[#555555]">
-                  <span className="text-xs">{c.time}</span>
-                  <button className="flex items-center gap-1 text-xs hover:text-[#e02020] transition-colors cursor-default">
-                    <Heart className="w-3.5 h-3.5" />
-                    {c.likes}
-                  </button>
-                  <button className="flex items-center gap-1 text-xs cursor-default">
-                    <MessageCircle className="w-3.5 h-3.5" />
-                    {c.replies}
-                  </button>
-                  <span className="text-xs ml-auto">Responder</span>
+            {/* Comment card */}
+            <div className="p-3 pb-2">
+              <div className="flex items-start gap-3">
+                <img
+                  src={c.avatar}
+                  alt={`Foto de ${c.name}`}
+                  className="w-10 h-10 rounded-full object-cover shrink-0"
+                  crossOrigin="anonymous"
+                />
+                <div className="flex-1 min-w-0">
+                  <span className="text-[#050505] font-bold text-[13px] leading-none">
+                    {c.name}
+                  </span>
+                  <p className="text-[#050505] text-[13px] leading-relaxed mt-1">
+                    {c.text}
+                  </p>
                 </div>
               </div>
+            </div>
+            {/* Like bar */}
+            <div className="border-t border-[#dadde1] mx-3" />
+            <div className="flex items-center px-3 py-1.5">
+              <button
+                onClick={() => handleLike(i)}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-md hover:bg-[#e4e6e9] transition-colors cursor-pointer"
+              >
+                <ThumbsUp
+                  className={`w-4 h-4 ${
+                    likedComments.has(i)
+                      ? "text-[#1877f2] fill-[#1877f2]"
+                      : "text-[#65676b]"
+                  }`}
+                />
+                <span
+                  className={`text-[13px] font-semibold ${
+                    likedComments.has(i) ? "text-[#1877f2]" : "text-[#65676b]"
+                  }`}
+                >
+                  Like
+                </span>
+              </button>
+              <span className="text-[#65676b] text-[12px] ml-auto">
+                {likeCounts[i]} {c.time}
+              </span>
             </div>
           </div>
         ))}
@@ -259,15 +257,6 @@ export function Testimonials() {
           </>
         )}
       </button>
-
-      <div className="mt-4 border-t border-[#1a1a1a] pt-4">
-        <div className="flex items-center gap-3 px-1">
-          <div className="w-8 h-8 rounded-full bg-[#222222]" />
-          <div className="flex-1 bg-[#111111] border border-[#222222] rounded-full px-4 py-2.5">
-            <span className="text-[#444444] text-sm">Adicionar um comentario...</span>
-          </div>
-        </div>
-      </div>
     </div>
   )
 }
