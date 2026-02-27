@@ -224,7 +224,7 @@ export function Testimonials() {
 
   return (
     <div className="w-full max-w-[800px] mx-auto px-3 sm:px-4">
-      <h2 className="text-white font-serif text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 text-center uppercase tracking-tight">
+      <h2 className="text-[#111111] font-serif text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 text-center uppercase tracking-tight">
         Resultados de Pessoas Comuns
       </h2>
 

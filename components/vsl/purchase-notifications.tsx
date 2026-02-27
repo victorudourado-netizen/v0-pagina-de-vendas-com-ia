@@ -72,12 +72,12 @@ export function PurchaseNotifications({ active }: PurchaseNotificationsProps) {
           : "translate-y-full sm:translate-y-0 sm:-translate-x-full opacity-0"
       }`}
     >
-      <div className="bg-[#111111] border border-[#222222] rounded-lg p-3 flex items-center gap-3 shadow-2xl shadow-black/50 sm:max-w-[340px]">
+      <div className="bg-white border border-[#e5e5e5] rounded-lg p-3 flex items-center gap-3 shadow-2xl shadow-black/10 sm:max-w-[340px]">
         <div className="w-10 h-10 rounded-full bg-[#0d7c3d]/20 flex items-center justify-center shrink-0">
           <CheckCircle className="w-5 h-5 text-[#22c55e]" />
         </div>
         <div className="min-w-0">
-          <p className="text-white text-sm font-semibold truncate">
+          <p className="text-[#111111] text-sm font-semibold truncate">
             {currentNotification.name}
           </p>
           <p className="text-[#888888] text-xs truncate">

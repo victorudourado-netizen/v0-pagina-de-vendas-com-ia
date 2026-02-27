@@ -46,24 +46,24 @@ export function FAQSection() {
 
   return (
     <div className="w-full max-w-[800px] mx-auto px-3 sm:px-4">
-      <h2 className="text-white text-lg sm:text-xl font-bold text-center mb-4 sm:mb-6">
+      <h2 className="text-[#111111] text-lg sm:text-xl font-bold text-center mb-4 sm:mb-6">
         Perguntas Frequentes
       </h2>
       <div className="flex flex-col gap-2">
         {faqs.map((faq, i) => (
           <div
             key={i}
-            className="border border-[#222222] rounded-lg overflow-hidden bg-[#0a0a0a]"
+            className="border border-[#e5e5e5] rounded-lg overflow-hidden bg-[#f9fafb]"
           >
             <button
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
               className="w-full flex items-center justify-between p-3 sm:p-4 text-left cursor-pointer"
             >
-              <span className="text-white text-xs sm:text-sm font-medium pr-3 sm:pr-4">
+              <span className="text-[#111111] text-xs sm:text-sm font-medium pr-3 sm:pr-4">
                 {faq.question}
               </span>
               <ChevronDown
-                className={`w-5 h-5 text-[#666666] shrink-0 transition-transform duration-200 ${
+                className={`w-5 h-5 text-[#999999] shrink-0 transition-transform duration-200 ${
                   openIndex === i ? "rotate-180" : ""
                 }`}
               />
@@ -73,7 +73,7 @@ export function FAQSection() {
                 openIndex === i ? "max-h-96 pb-4" : "max-h-0"
               }`}
             >
-              <p className="text-[#999999] text-xs sm:text-sm leading-relaxed px-3 sm:px-4">
+              <p className="text-[#666666] text-xs sm:text-sm leading-relaxed px-3 sm:px-4">
                 {faq.answer}
               </p>
             </div>

@@ -7,7 +7,7 @@ const _inter = Inter({ subsets: ["latin"] });
 const _oswald = Oswald({ subsets: ["latin"], weight: ["700"] });
 
 export const viewport: Viewport = {
-  themeColor: '#000000',
+  themeColor: '#ffffff',
   width: 'device-width',
   initialScale: 1,
   maximumScale: 1,
@@ -44,7 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR">
-      <body className="font-sans antialiased bg-black">
+      <body className="font-sans antialiased bg-white">
         {children}
         <Analytics />
       </body>

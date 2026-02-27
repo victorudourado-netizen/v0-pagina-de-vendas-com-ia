@@ -3,7 +3,6 @@
 import { useState, useCallback } from "react"
 import { VideoPlayer } from "@/components/vsl/video-player"
 import { LiveCounter } from "@/components/vsl/live-counter"
-
 import { CTASection } from "@/components/vsl/cta-section"
 import { Testimonials } from "@/components/vsl/testimonials"
 import { FAQSection } from "@/components/vsl/faq-section"
@@ -27,7 +26,7 @@ export default function VSLPage() {
   }, [])
 
   return (
-    <main className="min-h-screen bg-black selection:bg-[#e02020]/30">
+    <main className="min-h-screen bg-white selection:bg-[#e02020]/20">
       {/* Purchase notifications */}
       <PurchaseNotifications active={showNotifications} />
 
@@ -38,17 +37,17 @@ export default function VSLPage() {
 
       {/* Headline */}
       <div className="px-3 sm:px-4 pb-4 sm:pb-6 max-w-[800px] mx-auto text-center">
-        <p className="text-[#e02020] text-[10px] sm:text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-3 sm:mb-4 font-sans">
+        <p className="text-[#e02020] text-xs sm:text-sm font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-3 sm:mb-4 font-sans">
           Aviso: Este video pode ser removido a qualquer momento
         </p>
-        <h1 className="text-white text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold leading-[1.1] text-balance font-serif uppercase tracking-tight">
+        <h1 className="text-[#111111] text-[28px] sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-balance font-serif uppercase tracking-tight">
           A Igreja Nao Quer Que Voce Saiba Que Da Pra{" "}
           <span className="text-[#e02020]">Ganhar Dinheiro</span>{" "}
           Espalhando a Palavra de Deus Pelo Celular
         </h1>
-        <p className="text-[#888888] text-xs sm:text-sm md:text-base mt-3 sm:mt-4 leading-relaxed max-w-[640px] mx-auto text-pretty font-sans">
+        <p className="text-[#666666] text-sm sm:text-base md:text-lg mt-3 sm:mt-4 leading-relaxed max-w-[640px] mx-auto text-pretty font-sans">
           Um motorista de aplicativo descobriu uma brecha que grandes pastores e politicos{" "}
-          <span className="text-[#cccccc] font-medium">preferem que voce nunca descubra.</span>{" "}
+          <span className="text-[#222222] font-medium">preferem que voce nunca descubra.</span>{" "}
           Assista ate o final antes que removam este conteudo.
         </p>
       </div>
@@ -101,17 +100,17 @@ export default function VSLPage() {
       )}
 
       {/* Footer - disclaimer only shows after 5 min */}
-      <footer className="py-8 px-4 border-t border-[#111111]">
+      <footer className="py-8 px-4 border-t border-[#e5e5e5]">
         <div className="max-w-[800px] mx-auto text-center">
           {showCTA && (
-            <p className="text-[#444444] text-xs leading-relaxed font-sans mb-3">
+            <p className="text-[#999999] text-xs leading-relaxed font-sans mb-3">
               Este produto e vendido atraves da Kiwify. A plataforma de pagamento oferece
               garantia de 7 dias para reembolso. Ao adquirir, voce concorda com os termos de uso
               e politica de privacidade da plataforma. Este site nao e afiliado ao Facebook,
               Google, YouTube ou qualquer outra plataforma mencionada.
             </p>
           )}
-          <p className="text-[#333333] text-xs font-sans">
+          <p className="text-[#aaaaaa] text-xs font-sans">
             Metodo Cortes Abençoados - Todos os direitos reservados
           </p>
         </div>
