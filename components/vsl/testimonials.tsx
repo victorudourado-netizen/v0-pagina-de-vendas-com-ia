@@ -223,12 +223,12 @@ export function Testimonials() {
   }
 
   return (
-    <div className="w-full max-w-[800px] mx-auto px-4">
-      <h2 className="text-white font-serif text-xl md:text-2xl font-bold mb-6 text-center uppercase tracking-tight">
+    <div className="w-full max-w-[800px] mx-auto px-3 sm:px-4">
+      <h2 className="text-white font-serif text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 text-center uppercase tracking-tight">
         Resultados de Pessoas Comuns
       </h2>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3">
         {visible.map((c, i) => (
           <div
             key={i}

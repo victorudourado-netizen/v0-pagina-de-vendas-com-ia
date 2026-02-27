@@ -45,8 +45,8 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <div className="w-full max-w-[800px] mx-auto px-4">
-      <h2 className="text-white text-xl font-bold text-center mb-6">
+    <div className="w-full max-w-[800px] mx-auto px-3 sm:px-4">
+      <h2 className="text-white text-lg sm:text-xl font-bold text-center mb-4 sm:mb-6">
         Perguntas Frequentes
       </h2>
       <div className="flex flex-col gap-2">
@@ -57,9 +57,9 @@ export function FAQSection() {
           >
             <button
               onClick={() => setOpenIndex(openIndex === i ? null : i)}
-              className="w-full flex items-center justify-between p-4 text-left cursor-pointer"
+              className="w-full flex items-center justify-between p-3 sm:p-4 text-left cursor-pointer"
             >
-              <span className="text-white text-sm font-medium pr-4">
+              <span className="text-white text-xs sm:text-sm font-medium pr-3 sm:pr-4">
                 {faq.question}
               </span>
               <ChevronDown
@@ -73,7 +73,7 @@ export function FAQSection() {
                 openIndex === i ? "max-h-96 pb-4" : "max-h-0"
               }`}
             >
-              <p className="text-[#999999] text-sm leading-relaxed px-4">
+              <p className="text-[#999999] text-xs sm:text-sm leading-relaxed px-3 sm:px-4">
                 {faq.answer}
               </p>
             </div>

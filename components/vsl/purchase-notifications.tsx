@@ -66,13 +66,13 @@ export function PurchaseNotifications({ active }: PurchaseNotificationsProps) {
 
   return (
     <div
-      className={`fixed bottom-4 left-4 z-50 transition-all duration-500 ${
+      className={`fixed bottom-3 left-3 right-3 sm:right-auto sm:left-4 sm:bottom-4 z-50 transition-all duration-500 ${
         visible
-          ? "translate-x-0 opacity-100"
-          : "-translate-x-full opacity-0"
+          ? "translate-y-0 sm:translate-x-0 opacity-100"
+          : "translate-y-full sm:translate-y-0 sm:-translate-x-full opacity-0"
       }`}
     >
-      <div className="bg-[#111111] border border-[#222222] rounded-lg p-3 flex items-center gap-3 shadow-2xl shadow-black/50 max-w-[340px]">
+      <div className="bg-[#111111] border border-[#222222] rounded-lg p-3 flex items-center gap-3 shadow-2xl shadow-black/50 sm:max-w-[340px]">
         <div className="w-10 h-10 rounded-full bg-[#0d7c3d]/20 flex items-center justify-center shrink-0">
           <CheckCircle className="w-5 h-5 text-[#22c55e]" />
         </div>
