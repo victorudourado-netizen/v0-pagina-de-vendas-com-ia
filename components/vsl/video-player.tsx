@@ -9,23 +9,18 @@ interface VideoPlayerProps {
 export function VideoPlayer({ onTimeUpdate }: VideoPlayerProps) {
   const iframeRef = useRef<HTMLIFrameElement>(null)
   const overlayRef = useRef<HTMLDivElement>(null)
-  const [progress, setProgress] = useState(0)
   const [isPlaying, setIsPlaying] = useState(false)
   const [isPaused, setIsPaused] = useState(false)
   const startTimeRef = useRef<number | null>(null)
   const elapsedBeforePauseRef = useRef(0)
   const animRef = useRef<number | null>(null)
-  const estimatedDuration = 35 * 60
-
   const trackTime = useCallback(() => {
     if (!startTimeRef.current) return
     const now = Date.now()
     const elapsed = elapsedBeforePauseRef.current + (now - startTimeRef.current) / 1000
-    const pct = Math.min((elapsed / estimatedDuration) * 100, 100)
-    setProgress(pct)
     onTimeUpdate?.(elapsed)
     animRef.current = requestAnimationFrame(trackTime)
-  }, [onTimeUpdate, estimatedDuration])
+  }, [onTimeUpdate])
 
   const handleOverlayClick = () => {
     const iframe = iframeRef.current
@@ -69,7 +64,7 @@ export function VideoPlayer({ onTimeUpdate }: VideoPlayerProps) {
   return (
     <div className="w-full max-w-[800px] mx-auto">
       <div
-        className="relative w-full rounded-t-lg overflow-hidden bg-black"
+        className="relative w-full rounded-lg overflow-hidden bg-black"
         style={{ aspectRatio: "16/9" }}
       >
         <iframe
@@ -111,17 +106,7 @@ export function VideoPlayer({ onTimeUpdate }: VideoPlayerProps) {
           </div>
         )}
       </div>
-      {/* Persuasive progress bar */}
-      <div className="w-full h-[5px] bg-[#1a1a1a] rounded-b-lg overflow-hidden relative">
-        <div
-          className="h-full bg-[#e02020] transition-all duration-300 ease-linear"
-          style={{ width: `${progress}%` }}
-        />
-        <div
-          className="absolute top-0 h-full w-10 bg-gradient-to-r from-transparent via-white/30 to-transparent transition-all duration-300"
-          style={{ left: `calc(${progress}% - 20px)` }}
-        />
-      </div>
+
     </div>
   )
 }
