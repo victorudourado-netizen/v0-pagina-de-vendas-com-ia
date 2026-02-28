@@ -38,9 +38,6 @@ export default function VSLPage() {
 
       {/* Headline */}
       <div className="px-3 sm:px-4 pb-4 sm:pb-6 max-w-[800px] mx-auto text-center">
-        <p className="text-[#e02020] text-[11px] sm:text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-3 sm:mb-4 font-sans animate-pulse">
-          Vagas limitadas - Este video pode sair do ar a qualquer momento
-        </p>
         <h1 className="text-[#111111] text-[28px] sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-balance font-serif uppercase tracking-tight">
           Como Eu Fiz{" "}
           <span className="text-[#e02020]">R$ 3.741 Em 27 Dias</span>{" "}
