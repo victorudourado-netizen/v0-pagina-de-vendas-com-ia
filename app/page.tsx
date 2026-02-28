@@ -38,18 +38,18 @@ export default function VSLPage() {
 
       {/* Headline */}
       <div className="px-3 sm:px-4 pb-4 sm:pb-6 max-w-[800px] mx-auto text-center">
-        <p className="text-[#e02020] text-xs sm:text-sm font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-3 sm:mb-4 font-sans">
-          Aviso: Este video pode ser removido a qualquer momento
+        <p className="text-[#e02020] text-[11px] sm:text-xs font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] mb-3 sm:mb-4 font-sans animate-pulse">
+          Vagas limitadas - Este video pode sair do ar a qualquer momento
         </p>
         <h1 className="text-[#111111] text-[28px] sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-balance font-serif uppercase tracking-tight">
-          A Igreja Nao Quer Que Voce Saiba Que Da Pra{" "}
-          <span className="text-[#e02020]">Ganhar Dinheiro</span>{" "}
-          Espalhando a Palavra de Deus Pelo Celular
+          Como Eu Fiz{" "}
+          <span className="text-[#e02020]">R$ 3.741 Em 27 Dias</span>{" "}
+          Apenas Postando Cortes De Videos Cristaos Pelo Celular
         </h1>
-        <p className="text-[#666666] text-sm sm:text-base md:text-lg mt-3 sm:mt-4 leading-relaxed max-w-[640px] mx-auto text-pretty font-sans">
-          Um motorista de aplicativo descobriu uma brecha que grandes pastores e politicos{" "}
-          <span className="text-[#222222] font-medium">preferem que voce nunca descubra.</span>{" "}
-          Assista ate o final antes que removam este conteudo.
+        <p className="text-[#666666] text-sm sm:text-base md:text-lg mt-3 sm:mt-5 leading-relaxed max-w-[640px] mx-auto text-pretty font-sans">
+          Assista esse video de 3 minutos e descubra o metodo simples que esta permitindo{" "}
+          <span className="text-[#222222] font-semibold">pessoas comuns faturarem de R$ 100 a R$ 300 por dia</span>{" "}
+          espalhando a Palavra de Deus nas redes sociais, sem aparecer, sem gastar nada e usando apenas o celular.
         </p>
       </div>
 
