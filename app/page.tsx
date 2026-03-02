@@ -10,10 +10,10 @@ import { PurchaseNotifications } from "@/components/vsl/purchase-notifications"
 import { SalesText } from "@/components/vsl/sales-text"
 import { ExitIntentPopup } from "@/components/vsl/exit-intent-popup"
 
-const CHECKOUT_URL = "https://pay.kiwify.com.br/YvHHAGd"
-const DISCOUNT_CHECKOUT_URL = "https://pay.kiwify.com.br/YvHHAGd" // substituir pelo link de R$ 27 depois
+const CHECKOUT_URL = "https://pay.kiwify.com.br/OkSyoY0"
+const DISCOUNT_CHECKOUT_URL = "https://pay.kiwify.com.br/YvHHAGd"
 const PAGE_TIMER_CTA = 240_000
-const PAGE_TIMER_NOTIFICATIONS = 300_000
+const PAGE_TIMER_NOTIFICATIONS = 25_000
 
 export default function VSLPage() {
   const [showCTA, setShowCTA] = useState(false)
