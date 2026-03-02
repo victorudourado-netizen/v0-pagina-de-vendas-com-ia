@@ -84,7 +84,7 @@ export function PurchaseNotifications({ active }: PurchaseNotificationsProps) {
             {currentNotification.city}
           </p>
           <p className="text-[#22c55e] text-xs font-medium mt-0.5">
-            Acabou de obter as gravacoes
+            Acabou de receber as gravacoes
           </p>
         </div>
       </div>

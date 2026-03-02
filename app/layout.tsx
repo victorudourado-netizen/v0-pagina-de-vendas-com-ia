@@ -15,8 +15,8 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Metodo Cortes Abençoados - Ganhe Dinheiro com Cortes de Videos',
-  description: 'Descubra como ganhar dinheiro cortando e postando videos de podcasts e pregacoes. Metodo 100% organico, sem aparecer e sem gastar com anuncios.',
+  title: 'Motorista de App Revela Como Fez R$ 1.300 em 7 Dias Postando Cortes Cristaos',
+  description: 'Veja como um motorista de Uber pagou as contas do mes postando cortes de videos cristaos pelo celular. Metodo 100% organico, sem aparecer, sem gastar nada.',
   robots: 'noindex, nofollow',
   icons: {
     icon: [

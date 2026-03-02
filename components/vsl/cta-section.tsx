@@ -14,15 +14,6 @@ export function CTASection({ visible, checkoutUrl }: CTASectionProps) {
     <div className="w-full max-w-[800px] mx-auto px-3 sm:px-4 animate-in fade-in slide-in-from-bottom-4 duration-700">
       {/* Main CTA */}
       <div className="flex flex-col items-center gap-3 sm:gap-4">
-        <div className="text-center">
-          <p className="text-[#22c55e] text-xs sm:text-sm font-semibold uppercase tracking-wide mb-1">
-            Vagas Abertas
-          </p>
-          <p className="text-[#111111] text-base sm:text-lg font-bold">
-            Garanta sua vaga agora com acesso imediato
-          </p>
-        </div>
-
         <a
           href={checkoutUrl}
           target="_blank"
@@ -31,9 +22,9 @@ export function CTASection({ visible, checkoutUrl }: CTASectionProps) {
         >
           <div className="absolute -inset-1 bg-[#22c55e]/20 rounded-xl blur-lg group-hover:bg-[#22c55e]/30 transition-all duration-300" />
           <div className="relative bg-[#22c55e] hover:bg-[#16a34a] text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-6 sm:px-8 rounded-xl text-center transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#22c55e]/25">
-            <span className="block">QUERO COMECAR AGORA</span>
+            <span className="block font-serif uppercase tracking-wide">Quero Receber As Gravacoes Agora</span>
             <span className="block text-xs sm:text-sm font-normal mt-1 text-white/80">
-              Acesso imediato a todo o metodo
+              Por apenas R$ 47 + Garantia de 7 dias
             </span>
           </div>
         </a>
@@ -55,15 +46,12 @@ export function CTASection({ visible, checkoutUrl }: CTASectionProps) {
               Garantia Incondicional de 7 Dias
             </h3>
             <p className="text-[#666666] text-xs sm:text-sm leading-relaxed">
-              Se em 7 dias voce achar que o metodo nao e pra voce, basta
-              solicitar o reembolso e devolvemos 100% do seu dinheiro. Sem
-              perguntas, sem burocracia. O risco e todo nosso. Voce nao tem
-              absolutamente nada a perder.
+              Teste por 7 dias. Se achar que nao e pra voce, devolvo cada centavo.
+              Sem perguntas, sem burocracia. A unica pessoa que pode sair no prejuizo sou eu.
             </p>
           </div>
         </div>
       </div>
-
     </div>
   )
 }
