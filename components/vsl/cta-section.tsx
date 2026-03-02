@@ -22,7 +22,7 @@ export function CTASection({ visible, checkoutUrl }: CTASectionProps) {
         >
           <div className="absolute -inset-1 bg-[#22c55e]/20 rounded-xl blur-lg group-hover:bg-[#22c55e]/30 transition-all duration-300" />
           <div className="relative bg-[#22c55e] hover:bg-[#16a34a] text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-6 sm:px-8 rounded-xl text-center transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#22c55e]/25">
-            <span className="block font-serif uppercase tracking-wide">Quero Receber As Gravacoes Agora</span>
+            <span className="block font-serif uppercase tracking-wide">Quero Comecar A Ganhar Dinheiro Hoje</span>
             <span className="block text-xs sm:text-sm font-normal mt-1 text-white/80">
               Por apenas R$ 47 + Garantia de 7 dias
             </span>
@@ -46,8 +46,8 @@ export function CTASection({ visible, checkoutUrl }: CTASectionProps) {
               Garantia Incondicional de 7 Dias
             </h3>
             <p className="text-[#666666] text-xs sm:text-sm leading-relaxed">
-              Teste por 7 dias. Se achar que nao e pra voce, devolvo cada centavo.
-              Sem perguntas, sem burocracia. A unica pessoa que pode sair no prejuizo sou eu.
+              Teste por 7 dias. Se achar que nao e pra voce, solicite o reembolso e receba
+              cada centavo de volta. Sem perguntas, sem burocracia. Voce nao tem nada a perder.
             </p>
           </div>
         </div>

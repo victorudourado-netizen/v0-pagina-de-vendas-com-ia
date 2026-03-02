@@ -8,8 +8,10 @@ import { Testimonials } from "@/components/vsl/testimonials"
 import { FAQSection } from "@/components/vsl/faq-section"
 import { PurchaseNotifications } from "@/components/vsl/purchase-notifications"
 import { SalesText } from "@/components/vsl/sales-text"
+import { ExitIntentPopup } from "@/components/vsl/exit-intent-popup"
 
 const CHECKOUT_URL = "https://pay.kiwify.com.br/YvHHAGd"
+const DISCOUNT_CHECKOUT_URL = "https://pay.kiwify.com.br/YvHHAGd" // substituir pelo link de R$ 27 depois
 const PAGE_TIMER_CTA = 240_000
 const PAGE_TIMER_NOTIFICATIONS = 300_000
 
@@ -29,6 +31,7 @@ export default function VSLPage() {
   return (
     <main className="min-h-screen bg-white selection:bg-[#e02020]/20">
       <PurchaseNotifications active={showNotifications} />
+      <ExitIntentPopup discountCheckoutUrl={DISCOUNT_CHECKOUT_URL} />
 
       {/* Top bar */}
       <div className="pt-4 sm:pt-6 pb-2 sm:pb-3 px-3 sm:px-4">
@@ -38,14 +41,14 @@ export default function VSLPage() {
       {/* Headline */}
       <div className="px-3 sm:px-4 pb-4 sm:pb-6 max-w-[800px] mx-auto text-center">
         <h1 className="text-[#111111] text-[28px] sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.05] text-balance font-serif uppercase tracking-tight">
-          Motorista De App Revela Como Fez{" "}
-          <span className="text-[#e02020]">R$ 1.300 Em 7 Dias</span>{" "}
-          Postando Cortes Cristaos Pelo Celular
+          Descubra Como Pessoas Comuns Estao Fazendo{" "}
+          <span className="text-[#e02020]">R$ 100 a R$ 300 Por Dia</span>{" "}
+          Postando Cortes De Videos Pelo Celular
         </h1>
         <p className="text-[#666666] text-sm sm:text-base md:text-lg mt-3 sm:mt-5 leading-relaxed max-w-[640px] mx-auto text-pretty font-sans">
-          Assista esse video de 3 minutos e veja como ele pagou as contas de luz e agua do mes{" "}
-          <span className="text-[#222222] font-semibold">usando apenas o celular, sem aparecer, sem gastar nada</span>{" "}
-          -- e como voce pode copiar esse metodo ainda hoje.
+          Assista esse video de 3 minutos e veja o passo a passo completo para{" "}
+          <span className="text-[#222222] font-semibold">comecar a ganhar dinheiro ainda hoje</span>{" "}
+          -- sem aparecer, sem investir nada e usando apenas o seu celular.
         </p>
       </div>
 
@@ -84,7 +87,7 @@ export default function VSLPage() {
             >
               <div className="absolute -inset-1 bg-[#22c55e]/20 rounded-xl blur-lg group-hover:bg-[#22c55e]/30 transition-all duration-300 animate-pulse" />
               <div className="relative bg-[#22c55e] hover:bg-[#16a34a] text-white font-bold text-base sm:text-lg py-4 sm:py-5 px-6 sm:px-8 rounded-xl text-center transition-all duration-300 hover:scale-[1.02] active:scale-[0.98] shadow-lg shadow-[#22c55e]/25">
-                <span className="block font-serif uppercase tracking-wide">Quero Receber As Gravacoes Agora</span>
+                <span className="block font-serif uppercase tracking-wide">Quero Comecar A Ganhar Dinheiro Hoje</span>
                 <span className="block text-xs sm:text-sm font-normal mt-1 text-white/80 font-sans">
                   Por apenas R$ 47 + Garantia de 7 dias
                 </span>
@@ -113,7 +116,7 @@ export default function VSLPage() {
             </p>
           )}
           <p className="text-[#aaaaaa] text-xs font-sans">
-            Metodo Cortes Abençoados - Todos os direitos reservados
+            Todos os direitos reservados
           </p>
         </div>
       </footer>
