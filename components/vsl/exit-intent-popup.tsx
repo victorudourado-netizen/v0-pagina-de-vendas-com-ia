@@ -81,13 +81,15 @@ export function ExitIntentPopup({ discountCheckoutUrl }: ExitIntentPopupProps) {
           </p>
 
           <h3 className="text-[#111111] font-serif uppercase text-xl sm:text-2xl font-bold mt-3 leading-tight tracking-tight">
-            Voce ia sair sem ao menos tentar?
+            Nada acontece por acaso.
           </h3>
 
           <p className="text-[#666666] text-sm sm:text-base mt-3 leading-relaxed">
-            Talvez Deus tenha colocado essa oportunidade no seu caminho por um motivo.
-            Nao custa nada tentar -- e pra facilitar, liberamos um{" "}
-            <span className="text-[#111111] font-bold">desconto especial</span> so pra voce:
+            Nem uma folha cai de uma arvore sem que Deus permita. Se voce chegou ate aqui,
+            talvez essa seja a porta que Ele esta abrindo pra voce. Nao ignore mais uma
+            oportunidade que foi colocada no seu caminho. Pra te ajudar a dar esse passo,
+            liberamos um{" "}
+            <span className="text-[#111111] font-bold">desconto especial</span>:
           </p>
 
           {/* Price */}
