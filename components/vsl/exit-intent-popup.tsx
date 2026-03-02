@@ -81,13 +81,13 @@ export function ExitIntentPopup({ discountCheckoutUrl }: ExitIntentPopupProps) {
           </p>
 
           <h3 className="text-[#111111] font-serif uppercase text-xl sm:text-2xl font-bold mt-3 leading-tight tracking-tight">
-            Voce ia sair sem garantir sua vaga?
+            Voce ia sair sem ao menos tentar?
           </h3>
 
           <p className="text-[#666666] text-sm sm:text-base mt-3 leading-relaxed">
-            Entendo que voce pode estar em duvida. Por isso, vou liberar um{" "}
-            <span className="text-[#111111] font-bold">desconto exclusivo</span>{" "}
-            so pra voce que chegou ate aqui:
+            Talvez Deus tenha colocado essa oportunidade no seu caminho por um motivo.
+            Nao custa nada tentar -- e pra facilitar, liberamos um{" "}
+            <span className="text-[#111111] font-bold">desconto especial</span> so pra voce:
           </p>
 
           {/* Price */}
@@ -130,7 +130,7 @@ export function ExitIntentPopup({ discountCheckoutUrl }: ExitIntentPopupProps) {
             onClick={handleDismiss}
             className="mt-4 text-[#999999] text-xs hover:text-[#666666] underline cursor-pointer"
           >
-            Nao, obrigado. Quero sair.
+            Nao, prefiro continuar como estou.
           </button>
         </div>
       </div>
