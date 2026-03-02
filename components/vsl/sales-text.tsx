@@ -1,6 +1,7 @@
 "use client"
 
 import { CheckCircle, Smartphone, Eye, DollarSign, Clock, Zap, TrendingUp, MessageCircle, Heart } from "lucide-react"
+import { ProofCarousel } from "./proof-carousel"
 
 interface SalesTextProps {
   checkoutUrl: string
@@ -65,62 +66,9 @@ export function SalesText({ checkoutUrl }: SalesTextProps) {
         </div>
       </div>
 
-      {/* Proof section with real images */}
+      {/* Proof carousel */}
       <div className="mt-8 sm:mt-10">
-        <h3 className="text-[#111111] font-bold text-base sm:text-lg mb-2 font-serif uppercase tracking-tight text-center">
-          Prova Real: Isso Funciona
-        </h3>
-        <p className="text-[#666666] text-xs sm:text-sm text-center mb-5">
-          Resultados reais de quem ja aplica esse metodo no dia a dia
-        </p>
-
-        {/* Proof images grid */}
-        <div className="grid grid-cols-2 gap-2 sm:gap-3">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/ce4c6500d21aaab4b088e3e2bb3ebbdc-qAeg8DzLrgVVKfrTtRAoNnQBMNgEN6.jpg"
-            alt="Receita de R$ 3.845 em 7 dias"
-            className="w-full rounded-lg border border-[#e5e5e5] shadow-sm"
-          />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/647e857042aa5b05d91e22fe3f0f9a96-CRU6MNm2jcn21NVW4ZEIE2CHgX1N5n.jpg"
-            alt="Receita de R$ 1.978 em 7 dias"
-            className="w-full rounded-lg border border-[#e5e5e5] shadow-sm"
-          />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/comissao%20de%20110%20que%20veio%20do%20story%20do%20pastor%20-%20prova%20social.PNG-JD7QTPi1O9nxCRQzqkfjo3zat4ejm4.png"
-            alt="Comissao de R$ 110 via Pix"
-            className="w-full rounded-lg border border-[#e5e5e5] shadow-sm"
-          />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/975237755-kiwify-notificacao-fake-XS1Z%20%281%29-OsojxEeo00LH1GtYwkda1H78sqj4Ie.webp"
-            alt="Vendas aprovadas na Kiwify"
-            className="w-full rounded-lg border border-[#e5e5e5] shadow-sm"
-          />
-        </div>
-
-        {/* Full width proof images */}
-        <div className="grid grid-cols-2 gap-2 sm:gap-3 mt-2 sm:mt-3">
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/e140444db2d3f9644ab1a80aa6b370fe-vDk5DSpO9Yzt0ctnNJz2W5631TC77O.jpg"
-            alt="Notificacoes de vendas na Cakto"
-            className="w-full rounded-lg border border-[#e5e5e5] shadow-sm"
-          />
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img
-            src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/d5f02bae4aa495002a857b1793075808-GdDOCp0PBp6EdaUJ62cHSrnSHiGSiR.jpg"
-            alt="Notificacoes de vendas na Braip"
-            className="w-full rounded-lg border border-[#e5e5e5] shadow-sm"
-          />
-        </div>
-
-        <p className="text-[#888888] text-[10px] sm:text-xs text-center mt-3 italic">
-          Capturas de tela reais de plataformas de afiliados (Kiwify, Braip, Cakto)
-        </p>
+        <ProofCarousel />
       </div>
 
       {/* Emotional bridge - the real story */}
