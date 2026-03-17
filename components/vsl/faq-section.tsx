@@ -1,53 +1,88 @@
 "use client"
 
 import { useState } from "react"
-import { ChevronDown } from "lucide-react"
+import { ChevronDown, HelpCircle } from "lucide-react"
+import { cn } from "@/lib/utils"
+
+interface FAQItemProps {
+  question: string
+  answer: string
+  isOpen: boolean
+  onToggle: () => void
+}
+
+function FAQItem({ question, answer, isOpen, onToggle }: FAQItemProps) {
+  return (
+    <div className="border border-[#e5e5e5] rounded-xl overflow-hidden bg-white">
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center justify-between p-4 text-left gap-3 cursor-pointer hover:bg-[#fafafa] transition-colors"
+        aria-expanded={isOpen}
+      >
+        <span className="text-[#111111] font-semibold text-sm sm:text-[15px] leading-snug">
+          {question}
+        </span>
+        <ChevronDown
+          className={cn(
+            "w-5 h-5 text-[#999999] shrink-0 transition-transform duration-200",
+            isOpen && "rotate-180"
+          )}
+        />
+      </button>
+      <div
+        className={cn(
+          "overflow-hidden transition-all duration-200",
+          isOpen ? "max-h-[500px]" : "max-h-0"
+        )}
+      >
+        <p className="px-4 pb-4 text-[#555555] text-xs sm:text-sm leading-relaxed">
+          {answer}
+        </p>
+      </div>
+    </div>
+  )
+}
 
 const faqs = [
   {
-    question: "Preciso gastar alguma coisa pra comecar?",
+    question: "Quanto tempo leva pra ver resultados?",
     answer:
-      "Nao. Os sites de afiliacao sao gratuitos pra se cadastrar. A inteligencia artificial usada pra baixar e editar os videos e gratuita. E postar no Instagram, TikTok, YouTube e Kwai tambem e de graca. O unico investimento e o acesso ao metodo.",
+      "Depende do seu esforco e consistencia. Quem segue o metodo e posta todo dia costuma ver as primeiras vendas entre a primeira e a terceira semana. Alguns veem antes, outros demoram um pouco mais. Nao e da noite pro dia, mas funciona pra quem aplica.",
   },
   {
-    question: "O que exatamente sao esses sites de afiliacao?",
+    question: "Preciso aparecer nos videos?",
     answer:
-      "Sao sites que vendem produtos online -- concorrentes da Amazon e da Shopee. Em vez de investir em TV e anuncios tradicionais, eles pagam comissao pra pessoas comuns divulgarem seus produtos. E o mesmo modelo que a Avon e a Natura fizeram nos anos 90 no Brasil, so que pela internet. Voce pega seu link exclusivo, alguem compra por ele, voce recebe a comissao. Isso existe ha mais de 20 anos.",
+      "Nao. Voce posta videos de outras pessoas (pastores, podcasters, influenciadores, comediantes). Sua pagina pode ser totalmente anonima. Voce nunca precisa mostrar seu rosto nem gravar nada.",
   },
   {
-    question: "Preciso aparecer ou mostrar meu rosto?",
+    question: "Preciso investir dinheiro em anuncios?",
     answer:
-      "De jeito nenhum. A estrategia usa paginas anonimas. Voce usa videos que ja existem na internet, de pastores, podcasts, motivacional ou qualquer nicho. A I.A. baixa e edita pra voce. Nunca precisa gravar nada nem mostrar o rosto.",
+      "Nao pra comecar. O metodo ensina estrategias 100% organicas (gratuitas) primeiro. Trafego pago e ensinado como bonus pra quando voce quiser acelerar, mas nao e obrigatorio.",
   },
   {
-    question: "Consigo fazer isso so pelo celular?",
+    question: "Funciona so com videos cristaos?",
     answer:
-      "Sim. Todo o metodo foi pensado pra funcionar pelo celular. As gravacoes foram feitas na tela do celular justamente pra provar que nao precisa de computador. Se voce sabe mexer no celular, voce consegue.",
+      "Nao. O metodo funciona em qualquer nicho: futebol, humor, pegadinhas, fofocas, novelas, motivacao, etc. O nicho cristao e apenas um dos mais engajados, mas voce escolhe o que faz sentido pra voce.",
   },
   {
-    question: "O que e a estrategia de Video Review?",
+    question: "E so pelo celular mesmo? Nao precisa de computador?",
     answer:
-      "Alem dos cortes, o metodo ensina como criar videos de review de produtos no YouTube pra vender como afiliado. E mais uma forma de diversificar e aumentar suas comissoes usando o mesmo principio simples.",
+      "Sim, so pelo celular. Todo o processo e feito pelo celular: baixar video, editar com I.A., postar, acompanhar vendas. Voce nao precisa de computador, camera ou qualquer equipamento extra.",
   },
   {
-    question: "Tem algo sobre trafego pago?",
+    question: "O que sao esses sites de afiliacao?",
     answer:
-      "Sim. Inclui uma introducao ao trafego pago pra quando voce quiser escalar seus resultados, e tambem como trazer clientes direto pro seu WhatsApp. Mas o metodo principal e 100% organico e gratuito -- voce nao precisa gastar nada pra comecar a ter resultados.",
+      "Sao sites que vendem produtos online e pagam comissao pra pessoas divulgarem. E o mesmo modelo que Avon, Natura, Amazon e Shopee usam. Voce pega um link exclusivo, alguem compra por ele, voce recebe a comissao direto no Pix. Isso existe ha mais de 20 anos e e 100% legal.",
   },
   {
-    question: "Em quanto tempo vou ver resultado?",
+    question: "Como funciona a garantia?",
     answer:
-      "Depende da sua dedicacao, mas com menos de 1 hora por dia da pra aplicar tudo. Pessoas que seguiram o passo a passo viram resultado entre a primeira e a terceira semana. Ja houve caso de primeira venda com menos de 400 visualizacoes no video.",
+      "Voce tem 7 dias pra testar tudo. Se por qualquer motivo achar que nao e pra voce, basta enviar um email pedindo reembolso. Devolvemos 100% do valor sem perguntas e sem burocracia.",
   },
   {
-    question: "Funciona pra outros nichos alem do cristao?",
+    question: "O acesso e vitalicio mesmo?",
     answer:
-      "Com certeza. O metodo funciona com qualquer tipo de video: pegadinhas, futebol, humor, motivacional, fofoca, novelas. Varios alunos estao aplicando em nichos totalmente diferentes e tendo otimos resultados.",
-  },
-  {
-    question: "E se eu nao gostar ou nao conseguir?",
-    answer:
-      "Voce tem 7 dias de garantia incondicional pela Kiwify. Teste, assista as gravacoes, aplique. Se nao for pra voce, solicite o reembolso e receba cada centavo de volta. Sem perguntas.",
+      "Sim. Voce paga uma unica vez (R$ 47) e tem acesso pra sempre. Pode assistir quando quiser, quantas vezes quiser, sem mensalidade ou taxa extra.",
   },
 ]
 
@@ -55,39 +90,23 @@ export function FAQSection() {
   const [openIndex, setOpenIndex] = useState<number | null>(null)
 
   return (
-    <div className="w-full max-w-[800px] mx-auto px-3 sm:px-4">
-      <h2 className="text-[#111111] text-lg sm:text-xl font-bold text-center mb-4 sm:mb-6">
-        Perguntas Frequentes
-      </h2>
-      <div className="flex flex-col gap-2">
-        {faqs.map((faq, i) => (
-          <div
-            key={i}
-            className="border border-[#e5e5e5] rounded-lg overflow-hidden bg-[#f9fafb]"
-          >
-            <button
-              onClick={() => setOpenIndex(openIndex === i ? null : i)}
-              className="w-full flex items-center justify-between p-3 sm:p-4 text-left cursor-pointer"
-            >
-              <span className="text-[#111111] text-xs sm:text-sm font-medium pr-3 sm:pr-4">
-                {faq.question}
-              </span>
-              <ChevronDown
-                className={`w-5 h-5 text-[#999999] shrink-0 transition-transform duration-200 ${
-                  openIndex === i ? "rotate-180" : ""
-                }`}
-              />
-            </button>
-            <div
-              className={`overflow-hidden transition-all duration-300 ${
-                openIndex === i ? "max-h-96 pb-4" : "max-h-0"
-              }`}
-            >
-              <p className="text-[#666666] text-xs sm:text-sm leading-relaxed px-3 sm:px-4">
-                {faq.answer}
-              </p>
-            </div>
-          </div>
+    <div className="w-full max-w-[680px] mx-auto px-4">
+      <div className="flex items-center gap-2 justify-center mb-5">
+        <HelpCircle className="w-5 h-5 text-[#e02020]" />
+        <h2 className="text-[#111111] font-serif uppercase text-lg sm:text-xl font-bold tracking-tight">
+          Perguntas Frequentes
+        </h2>
+      </div>
+
+      <div className="space-y-2.5">
+        {faqs.map((faq, index) => (
+          <FAQItem
+            key={index}
+            question={faq.question}
+            answer={faq.answer}
+            isOpen={openIndex === index}
+            onToggle={() => setOpenIndex(openIndex === index ? null : index)}
+          />
         ))}
       </div>
     </div>

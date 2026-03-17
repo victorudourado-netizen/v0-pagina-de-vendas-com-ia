@@ -81,14 +81,14 @@ export function ExitIntentPopup({ discountCheckoutUrl }: ExitIntentPopupProps) {
           </p>
 
           <h3 className="text-[#111111] font-serif uppercase text-xl sm:text-2xl font-bold mt-3 leading-tight tracking-tight">
-            Nada acontece por acaso.
+            Voce ia sair sem tentar?
           </h3>
 
           <p className="text-[#666666] text-sm sm:text-base mt-3 leading-relaxed">
-            Nem uma folha cai de uma arvore sem que Deus permita. Se voce chegou ate aqui,
-            talvez essa seja a porta que Ele esta abrindo pra voce. Nao ignore mais uma
-            oportunidade que foi colocada no seu caminho. Pra te ajudar a dar esse passo,
-            liberamos um{" "}
+            Olha, eu entendo a desconfianca. A internet ta cheia de promessa furada. Mas
+            voce chegou ate aqui por um motivo. Custa R$ 47 -- menos que um lanche. E se
+            nao funcionar pra voce, tem garantia de 7 dias pra pedir o dinheiro de volta.
+            Pra facilitar sua decisao, liberamos um{" "}
             <span className="text-[#111111] font-bold">desconto especial</span>:
           </p>
 

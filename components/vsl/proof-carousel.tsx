@@ -81,11 +81,11 @@ export function ProofCarousel() {
 
   return (
     <div className="w-full">
-      <h3 className="text-[#111111] font-bold text-base sm:text-lg mb-2 font-serif uppercase tracking-tight text-center">
-        Prova Real: Isso Funciona
+      <h3 className="text-[#111111] font-bold text-lg sm:text-xl mb-2 font-serif uppercase tracking-tight text-center">
+        Resultados Reais de Pessoas Comuns
       </h3>
-      <p className="text-[#666666] text-xs sm:text-sm text-center mb-4">
-        Resultados reais de quem ja aplica esse metodo
+      <p className="text-[#666666] text-xs sm:text-sm text-center mb-5">
+        Nao sao promessas. Sao capturas de tela de quem ja esta aplicando.
       </p>
 
       <div className="relative">
@@ -150,8 +150,8 @@ export function ProofCarousel() {
         </div>
       </div>
 
-      <p className="text-[#999999] text-[10px] sm:text-xs text-center mt-3 italic">
-        Capturas de tela reais de plataformas de afiliados (Kiwify, Braip, Cakto)
+      <p className="text-[#888888] text-[10px] sm:text-xs text-center mt-4 leading-relaxed max-w-[400px] mx-auto">
+        Prints reais de plataformas de afiliacao (Kiwify, Braip, Cakto). Resultados variam de pessoa pra pessoa.
       </p>
     </div>
   )
