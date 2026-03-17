@@ -318,9 +318,12 @@ export function Testimonials() {
 
   return (
     <div className="w-full max-w-[800px] mx-auto px-3 sm:px-4">
-      <h2 className="text-[#111111] font-serif text-lg sm:text-xl md:text-2xl font-bold mb-4 sm:mb-6 text-center uppercase tracking-tight">
-        Resultados de Pessoas Comuns
+      <h2 className="text-[#111111] font-serif text-lg sm:text-xl md:text-2xl font-bold mb-2 text-center uppercase tracking-tight">
+        O Que as Pessoas Estao Dizendo
       </h2>
+      <p className="text-[#777777] text-xs sm:text-sm text-center mb-5">
+        Depoimentos reais de quem ja esta aplicando o metodo
+      </p>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5 sm:gap-3">
         {visible.map((c, i) => (
