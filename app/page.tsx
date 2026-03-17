@@ -104,16 +104,19 @@ export default function TSLPage() {
 
         {/* Headline */}
         <h1 className="text-[#111111] text-[26px] sm:text-4xl md:text-[42px] font-bold leading-[1.12] text-balance font-serif uppercase tracking-tight text-center">
-          Pessoas comuns estao ganhando{" "}
-          <span className="text-[#e02020]">de R$ 100 a R$ 300 por dia</span>{" "}
-          postando videos curtos pelo celular
+          Como pessoas comuns estao{" "}
+          <span className="text-[#e02020]">ganhando dinheiro</span>{" "}
+          pelo celular postando videos simples{" "}
+          <span className="text-[#555555] font-normal text-[22px] sm:text-3xl md:text-[34px]">
+            (inclusive conteudos cristaos)
+          </span>
         </h1>
 
         {/* Subheadline */}
         <p className="text-[#444444] text-sm sm:text-[17px] mt-5 sm:mt-6 leading-relaxed text-center text-pretty max-w-[560px] mx-auto">
-          Sem aparecer, sem gravar nada, sem precisar de computador e sem investir dinheiro.{" "}
+          Sem aparecer, sem gravar nada, sem investir dinheiro e usando apenas o celular.{" "}
           <span className="text-[#111111] font-semibold">
-            Tudo o que voce precisa e um celular com internet.
+            Funciona mesmo comecando do zero.
           </span>
         </p>
 
@@ -288,16 +291,43 @@ export default function TSLPage() {
             </p>
           </div>
 
-          <div className="mt-6 pt-5 border-t border-[#e5e5e5]">
-            <p className="text-[#444444] text-sm sm:text-[15px] leading-relaxed text-center">
-              E se voce escolher o nicho cristao, ainda pode{" "}
-              <span className="text-[#111111] font-semibold">
-                ganhar dinheiro enquanto leva a Palavra
-              </span>{" "}
-              a milhares de pessoas que talvez nunca pisariam numa igreja.
+        </div>
+      </section>
+
+      {/* ===== CHRISTIAN EMOTIONAL SECTION ===== */}
+      <section className="px-4 pb-10 sm:pb-14 max-w-[680px] mx-auto">
+        <div className="bg-gradient-to-b from-[#fefce8] to-[#fef9c3] border border-[#fcd34d] rounded-2xl p-5 sm:p-7">
+          <div className="flex items-center gap-2 justify-center mb-4">
+            <Heart className="w-5 h-5 text-[#ca8a04]" />
+            <h2 className="text-[#78350f] font-serif uppercase text-lg sm:text-xl font-bold tracking-tight">
+              Se voce e cristao, isso fica ainda mais poderoso
+            </h2>
+          </div>
+
+          <p className="text-[#854d0e] text-sm sm:text-[15px] leading-relaxed text-center mb-5">
+            Voce pode ganhar dinheiro enquanto compartilha conteudos que{" "}
+            <span className="font-semibold">edificam vidas e levam esperanca</span> pra milhares de pessoas.
+          </p>
+
+          <div className="space-y-3 text-[#713f12] text-sm sm:text-[15px]">
+            <p className="flex items-start gap-2">
+              <CheckCircle className="w-4 h-4 text-[#ca8a04] shrink-0 mt-0.5" />
+              <span>Cortes de pregacoes que transformam vidas</span>
             </p>
-            <p className="text-[#777777] text-xs sm:text-sm text-center mt-2">
-              (Mas funciona em qualquer nicho: futebol, humor, pegadinhas, novelas, motivacao...)
+            <p className="flex items-start gap-2">
+              <CheckCircle className="w-4 h-4 text-[#ca8a04] shrink-0 mt-0.5" />
+              <span>Mensagens que fortalecem e consolam pessoas</span>
+            </p>
+            <p className="flex items-start gap-2">
+              <CheckCircle className="w-4 h-4 text-[#ca8a04] shrink-0 mt-0.5" />
+              <span>Conteudos que alcancam quem talvez nunca pisaria numa igreja</span>
+            </p>
+          </div>
+
+          <div className="mt-5 pt-4 border-t border-[#fcd34d]/50">
+            <p className="text-[#92400e] text-xs sm:text-sm text-center italic">
+              Mas se voce nao e cristao, funciona igual com outros tipos de conteudo:{" "}
+              futebol, humor, pegadinhas, motivacao, fofoca, novelas...
             </p>
           </div>
         </div>
