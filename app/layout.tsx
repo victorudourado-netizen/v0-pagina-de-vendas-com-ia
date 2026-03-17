@@ -15,7 +15,7 @@ export const viewport: Viewport = {
 }
 
 export const metadata: Metadata = {
-  title: 'Metodo Cortes Abençoados',
+  title: 'Método Cortes Abençoados',
   description: 'Metodo simples para ganhar de R$ 100 a R$ 300 por dia postando cortes de videos pelo celular. Sem aparecer, sem investir nada, 100% organico.',
   robots: 'noindex, nofollow',
   icons: {
